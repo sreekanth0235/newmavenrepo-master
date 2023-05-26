@@ -1,14 +1,6 @@
 pipeline{
     agent any
-    
-    
-  environment {
-    AWS_ACCESS_KEY_ID = credentials('accesskey')
-    AWS_SECRET_ACCESS_KEY = credentials('screatkey')
-    AWS_DEFAULT_REGION = 'ap-northeast-1'
-  }
-stages{
-  stage('CheckOutCode'){
+   stage('CheckOutCode'){
     steps{
    checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sreekanth0235/newmavenrepo-master']])
 	
